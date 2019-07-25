@@ -10,14 +10,23 @@ Long story short, this contains:
 - Node.js
 - Other (random-ish) stuff useful for getting a Rails app running
 
+## Using this
+
+The images built from this repository are available on [Docker hub](https://hub.docker.com/r/narnach/bl-ruby-ci-base). You can download the latest version via:
+
+```bash
+docker pull narnach/bl-ruby-ci-base
+```
+
 ## Build instructions
 
 ```bash
-# Build the image for local use:
-docker build -t narnach/bl-ruby-ci-base:ruby-2.6.3 .
+# Build the image for local use, tagging it with the Ruby version and the "latest" tag.
+docker build -t narnach/bl-ruby-ci-base:latest -t narnach/bl-ruby-ci-base:ruby-2.6.3 .
 
 # Push the image (only useful for me, the Docker hub repository owner)
 docker push narnach/bl-ruby-ci-base:ruby-2.6.3
+docker push narnach/bl-ruby-ci-base:latest 
 ```
 
 After step 1, you can locally use the Docker image `bl-ruby-ci-base:ruby-2.6.3`.

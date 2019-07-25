@@ -26,7 +26,7 @@ RUN echo 'gem: --no-document --no-ri' >> /root/.gemrc
 
 # Base packages
 RUN apt-get update && \
-    apt-get install -y \
+    apt-get install -y --no-install-recommends \
         # Enable HTTPS sources
         apt-transport-https \
         # Compile stuff
@@ -38,7 +38,9 @@ RUN apt-get update && \
         # If you use Javascript, you need this
         nodejs \
         # Timezone data
-        tzdata
+        tzdata \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Fix the default locale in the image to something that does not raise odd C errors (before we compile anything)
 RUN locale-gen en_US.UTF-8 && \
@@ -62,5 +64,7 @@ RUN curl --silent https://packages.microsoft.com/keys/microsoft.asc | apt-key ad
     curl --silent https://packages.microsoft.com/config/ubuntu/$UBUNTU_VERSION/prod.list | tee /etc/apt/sources.list.d/msprod.list && \
     # Update apt-get with new repo, then install dependencies. Add related dependencies on their own lines to keep it clear what goes together.
     apt-get update && \
-    apt-get install -y \
-        mssql-tools unixodbc-dev
+    apt-get install -y --no-install-recommends \
+        mssql-tools unixodbc-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
