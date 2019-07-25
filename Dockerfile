@@ -8,7 +8,7 @@ FROM buildpack-deps:16.04
 
 # Top-level version config
 ENV UBUNTU_VERSION="16.04"
-ENV RUBY_VERSION="2.2.2"
+ENV RUBY_VERSION="2.6.3"
 ENV BUNDLER_VERSION="1.17.3"
 
 # Rbenv relevant info
