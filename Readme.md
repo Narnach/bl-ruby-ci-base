@@ -5,7 +5,7 @@ For a client I've got some a-typical requirements for CI. CircleCI has Debian im
 Long story short, this contains:
 
 - Ubuntu 16.04
-- Ruby 2.6.3
+- Ruby 2.6.5
 - MS SQL Tools
 - Node.js
 - Other (random-ish) stuff useful for getting a Rails app running
@@ -22,20 +22,21 @@ docker pull narnach/bl-ruby-ci-base
 
 ```bash
 # Build the image for local use, tagging it with the Ruby version and the "latest" tag.
-docker build -t narnach/bl-ruby-ci-base:latest -t narnach/bl-ruby-ci-base:ruby-2.6.3 .
+docker build -t narnach/bl-ruby-ci-base:latest -t narnach/bl-ruby-ci-base:ruby-2.6.5 .
 
 # Push the image (only useful for me, the Docker hub repository owner)
-docker push narnach/bl-ruby-ci-base:ruby-2.6.3
+docker push narnach/bl-ruby-ci-base:ruby-2.6.5
 docker push narnach/bl-ruby-ci-base:latest 
 ```
 
-After step 1, you can locally use the Docker image `bl-ruby-ci-base:ruby-2.6.3`.
+After step 1, you can locally use the Docker image `bl-ruby-ci-base:ruby-2.6.5`.
 Step 2 is what I have performed to get the latest version on Docker hub.
 
 Ruby versions I've created images for in this way:
 
 - Ruby 2.2.2
 - Ruby 2.6.3
+- Ruby 2.6.5
 
 ## Version updates / custom images
 
