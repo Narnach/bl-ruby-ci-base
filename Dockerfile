@@ -3,7 +3,7 @@
 # - once to build our final image (without compilation steps' temporary data)
 # MS SQL has a source list for it, so that's why we use it.
 # Use the buildpack-deps version to get a lot of useful dependencies for free.
-FROM buildpack-deps:16.04
+FROM buildpack-deps:20.10
 
 # Top-level version config
 ENV UBUNTU_VERSION="16.04"
