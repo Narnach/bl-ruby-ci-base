@@ -1,5 +1,7 @@
 # Base image for CircleCI
 
+> I've stopped using this myself, so this project is archived to reflect this. As with all my open source code, it's licensed under MIT so feel free to use this however you want.
+
 For a client I've got some a-typical requirements for CI. CircleCI has Debian images, but I need a MS SQL client, which is only available for Ubuntu.
 
 Long story short, this contains:
